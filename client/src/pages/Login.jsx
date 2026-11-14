@@ -28,7 +28,7 @@ export default function Login() {
   };
 
   return (
-    <div className="blueprint relative flex min-h-screen items-center overflow-hidden bg-steel-950">
+    <div className="blueprint relative flex min-h-dvh items-center overflow-hidden bg-steel-950">
       {!reduceMotion && (
         <div className="absolute inset-0 opacity-50 lg:right-1/3 lg:opacity-100">
           <Suspense fallback={null}>

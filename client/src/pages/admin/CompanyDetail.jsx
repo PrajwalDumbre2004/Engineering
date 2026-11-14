@@ -73,7 +73,7 @@ export default function CompanyDetail() {
           <span className="font-mono text-sm text-accent">{company.code}</span>
           {!company.isActive && <span className="ml-3 text-sm text-red-300">Disabled - members cannot log in</span>}
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button className="btn" onClick={toggleCompany}>{company.isActive ? 'Disable' : 'Enable'}</button>
           <button className="btn btn-danger" onClick={deleteCompany}>Delete</button>
         </div>
@@ -117,7 +117,7 @@ export default function CompanyDetail() {
                   <p className="text-white">{m.name} {!m.isActive && <span className="text-sm text-red-300">(disabled)</span>}</p>
                   <p className="font-mono text-sm text-accent">{m.loginId}</p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <button className="btn" onClick={() => resetPassword(m)}>Reset password</button>
                   <button className="btn" onClick={() => toggleMember(m)}>{m.isActive ? 'Disable' : 'Enable'}</button>
                 </div>

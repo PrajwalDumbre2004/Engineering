@@ -74,7 +74,7 @@ export default function ProjectDetail() {
           <h1 className="heading font-mono normal-case">{project.projectNo}</h1>
           <p className="text-steel-400">{project.title}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button className="btn btn-primary" onClick={() => openForm({})}>+ Add part</button>
           <button className="btn btn-danger" onClick={removeProject}>Delete project</button>
         </div>
@@ -95,7 +95,7 @@ export default function ProjectDetail() {
                 <select className="input" value={p.status} onChange={(e) => changeStatus(p, e.target.value)}>
                   {STATUSES.map((s) => <option key={s.key} value={s.key}>{s.label}</option>)}
                 </select>
-                <div className="flex w-28 gap-2">
+                <div className="flex gap-2 md:w-28">
                   <button className="btn px-3" onClick={() => openForm(p)} aria-label="Edit">✎</button>
                   <button className="btn btn-danger px-3" onClick={() => removePart(p)} aria-label="Delete">🗑</button>
                 </div>

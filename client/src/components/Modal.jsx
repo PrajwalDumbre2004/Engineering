@@ -12,7 +12,7 @@ export default function Modal({ open, onClose, title, children }) {
           onMouseDown={(e) => e.target === e.currentTarget && onClose()}
         >
           <motion.div
-            className="panel w-full max-w-md"
+            className="panel max-h-[90dvh] w-full max-w-md overflow-y-auto"
             initial={{ y: 40, scale: 0.96, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
@@ -20,7 +20,7 @@ export default function Modal({ open, onClose, title, children }) {
           >
             <div className="mb-4 flex items-center justify-between">
               <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-white">{title}</h2>
-              <button onClick={onClose} className="size-8 rounded text-steel-400 hover:text-white" aria-label="Close">
+              <button onClick={onClose} className="size-11 rounded text-steel-400 hover:text-white" aria-label="Close">
                 ✕
               </button>
             </div>

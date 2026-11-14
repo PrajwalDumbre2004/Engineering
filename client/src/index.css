@@ -71,6 +71,6 @@ body {
     @apply mb-1 block text-xs font-medium uppercase tracking-wider text-steel-400;
   }
   .heading {
-    @apply font-display text-3xl font-semibold uppercase tracking-wide text-white;
+    @apply font-display text-2xl font-semibold uppercase tracking-wide break-words text-white sm:text-3xl;
   }
 }
