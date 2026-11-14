@@ -1,6 +1,7 @@
 {
   "name": "mech-shop",
   "private": true,
+  "type": "module",
   "workspaces": ["client", "server"],
   "scripts": {
     "dev": "concurrently -n server,client -c yellow,cyan \"npm run dev -w server\" \"npm run dev -w client\"",

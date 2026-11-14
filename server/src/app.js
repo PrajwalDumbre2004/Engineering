@@ -9,6 +9,7 @@ import customerRoutes from './routes/customer.routes.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
+app.set('trust proxy', 1); // behind Vercel's proxy: use the real client IP for rate limiting
 
 app.use(helmet());
 app.use(cors({ origin: config.clientOrigin, credentials: true }));
