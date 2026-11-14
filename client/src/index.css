@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-steel-950: #0b0e11;
+  --color-steel-900: #0f1317;
+  --color-steel-800: #1b2128;
+  --color-steel-700: #262e37;
+  --color-steel-600: #36404b;
+  --color-steel-400: #8593a3;
+  --color-steel-200: #c9d1da;
+  --color-accent: #ff6a00;
+  --color-accent-600: #e05d00;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-steel-900);
+  color: var(--color-steel-200);
+  font-family: var(--font-sans);
+}
+
+/* Blueprint grid backdrop */
+.blueprint {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hazard {
+  background: repeating-linear-gradient(-45deg, var(--color-accent) 0 10px, #15191e 10px 20px);
+}
+
+@layer components {
+  .panel {
+    @apply relative rounded-lg border border-steel-600/60 bg-gradient-to-b from-steel-800 to-steel-800/70 p-5 shadow-lg shadow-black/30;
+  }
+  /* rivets in the top corners */
+  .panel::before,
+  .panel::after {
+    content: '';
+    @apply absolute top-2 size-1.5 rounded-full bg-steel-600;
+  }
+  .panel::before {
+    @apply left-2;
+  }
+  .panel::after {
+    @apply right-2;
+  }
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-steel-600 bg-steel-700 px-4 text-sm font-medium text-steel-200 transition hover:bg-steel-600 active:scale-95 disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply border-accent bg-accent text-black hover:bg-accent-600;
+  }
+  .btn-danger {
+    @apply border-red-500/50 bg-red-500/10 text-red-300 hover:bg-red-500/20;
+  }
+  .input {
+    @apply min-h-11 w-full rounded-md border border-steel-600 bg-steel-950 px-3 text-steel-200 placeholder:text-steel-400/60 focus:border-accent focus:outline-none;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wider text-steel-400;
+  }
+  .heading {
+    @apply font-display text-3xl font-semibold uppercase tracking-wide text-white;
+  }
+}
